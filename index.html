@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name – Portfolio</title>
+<meta name="description" content="Your Name, software and electronics student. Projects, skills and contact.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef1f4; --ink:#14202b; --muted:#566574; --line:#cfd7de; --accent:#0b6e5b; --chip:#dfe7ec;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#10181f; --ink:#e8eef2; --muted:#93a3b0; --line:#26343f; --accent:#4fd1b0; --chip:#1a2630; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif}
+main{max-width:46rem;margin:0 auto;padding:4rem 1.5rem 3rem}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.8rem,10vw,5rem);font-weight:800;letter-spacing:-.03em}
+h2{font-size:1.5rem;font-weight:700;margin-bottom:1.25rem}
+h3{font-size:1.2rem;font-weight:700}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+section{margin-top:4.5rem}
+.lead{font-size:1.25rem;max-width:34rem;margin:1.25rem 0 1.5rem}
+.now{display:inline-block;font-weight:600;padding:.35rem .8rem;background:var(--chip);border-radius:999px;font-size:.95rem}
+.now::before{content:"";display:inline-block;width:.55rem;height:.55rem;border-radius:50%;background:var(--accent);margin-right:.55rem;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.links{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:1.5rem;font-weight:600}
+.project{display:grid;gap:.35rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.project:last-child{border-bottom:1px solid var(--line)}
+.project p{margin:0;color:var(--muted);max-width:36rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}
+.tags span{background:var(--chip);padding:.1rem .6rem;border-radius:4px;font-size:.9rem}
+dl{margin:0;display:grid;grid-template-columns:9rem 1fr;gap:.6rem 1rem}
+dt{font-weight:600}
+dd{margin:0;color:var(--muted)}
+footer{margin-top:5rem;color:var(--muted);font-size:.95rem}
+@media (max-width:30rem){dl{grid-template-columns:1fr;gap:.1rem}dd{margin-bottom:.8rem}}
+@media (prefers-reduced-motion:reduce){.now::before{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Your Name</h1>
+    <p class="lead">I build embedded systems and the software around them: sensor loggers, dashboards, and device drivers. Add one sentence here about what you are looking for, such as an internship in embedded systems.</p>
+    <span class="now">Currently building: ESP32 vibration and power loggers</span>
+    <div class="links">
+      <a href="mailto:you@example.com">you@example.com</a>
+      <a href="https://github.com/your-username">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-username">LinkedIn</a>
+      <a href="resume.pdf">Download resume</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <h3><a href="https://github.com/your-username/vibration-logger">Vibration data logger with live dashboard</a></h3>
+      <p>ESP32 with an accelerometer samples vibration data and streams it over Wi-Fi to a Python dashboard that plots the signal live and shows frequency content (FFT). Logs are saved to CSV for later analysis.</p>
+      <div class="tags"><span>ESP32</span><span>C/C++</span><span>Python</span><span>FFT</span><span>Dashboard</span></div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/your-username/power-logger">Power data logger</a></h3>
+      <p>ESP32 measures voltage and current, calculates power and energy use over time, and sends the readings to the same dashboard.</p>
+      <div class="tags"><span>ESP32</span><span>ADC / I2C sensors</span><span>Python</span><span>Data logging</span></div>
+    </article>
+
+    <article class="project">
+      <h3><a href="https://github.com/your-username/virtual-gpio">Register-level virtual GPIO driver and hardware simulator</a></h3>
+      <p>A GPIO peripheral modeled in C with memory-mapped registers, plus a driver on top of it. Simulates pin configuration, digital input and output, external input signals, interrupts, error conditions, and automated driver tests, all without a physical microcontroller.</p>
+      <div class="tags"><span>Embedded C</span><span>Device drivers</span><span>Register-level programming</span><span>Unit testing</span></div>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl>
+      <dt>Languages</dt><dd>Embedded C, C++, Python, HTML, CSS</dd>
+      <dt>Hardware</dt><dd>ESP32, accelerometer and current sensors, I2C, ADC</dd>
+      <dt>Tools</dt><dd>Git, GitHub, VS Code, Wokwi, GCC, Make</dd>
+    </dl>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p><strong>Your Degree</strong>, Your College, 2022 to 2026</p>
+  </section>
+
+  <footer>© <span id="y"></span> Your Name</footer>
+</main>
+<script>document.getElementById("y").textContent=new Date().getFullYear();</script>
+</body>
+</html>
