@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rohan Nargundkar – Portfolio</title>
-<meta name="description" content="Your Name, software and electronics student. Projects, skills and contact.">
+<title>Rohan Nargundkar – Embedded Systems Portfolio</title>
+<meta name="description" content="Rohan Nargundkar, Electronics and Communication Engineering student focused on embedded systems, Embedded C.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Source Sans 3",system-ui,sans-serif}
-main{max-width:46rem;margin:0 auto;padding:4rem 1.5rem 3rem}
+main{width:100%;max-width:64rem;margin:0;padding:4rem clamp(1.5rem,6vw,6rem) 3rem}
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
 h1{font-size:clamp(2.8rem,10vw,5rem);font-weight:800;letter-spacing:-.03em}
 h2{font-size:1.5rem;font-weight:700;margin-bottom:1.25rem}
@@ -35,13 +35,14 @@ section{margin-top:4.5rem}
 .project{display:grid;gap:.35rem;padding:1.4rem 0;border-top:1px solid var(--line)}
 .project:last-child{border-bottom:1px solid var(--line)}
 .project p{margin:0;color:var(--muted);max-width:36rem}
+.status{font:600 .8rem/1.4 "Source Sans 3",system-ui,sans-serif;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:.15rem .55rem;vertical-align:middle;white-space:nowrap}
 .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.4rem}
 .tags span{background:var(--chip);padding:.1rem .6rem;border-radius:4px;font-size:.9rem}
 dl{margin:0;display:grid;grid-template-columns:9rem 1fr;gap:.6rem 1rem}
 dt{font-weight:600}
 dd{margin:0;color:var(--muted)}
 footer{margin-top:5rem;color:var(--muted);font-size:.95rem}
-@media (max-width:30rem){dl{grid-template-columns:1fr;gap:.1rem}dd{margin-bottom:.8rem}}
+@media (max-width:30rem){main{padding:2.5rem 1.25rem 2rem}dl{grid-template-columns:1fr;gap:.1rem}dd{margin-bottom:.8rem}}
 @media (prefers-reduced-motion:reduce){.now::before{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -50,12 +51,11 @@ footer{margin-top:5rem;color:var(--muted);font-size:.95rem}
 
   <header>
     <h1>ROHAN NARGUNDKAR</h1>
-    <p class="lead">I build embedded systems and the software around them: sensor loggers, dashboards, and device drivers. Add one sentence here about what you are looking for, such as an internship in embedded systems.</p>
-    <span class="now">Currently building: MCU independent embedded linux project</span>
+    <p class="lead">Electronics and Communication Engineering student focused on embedded systems, Embedded C, and sensor-based monitoring applications. Seeking opportunities in embedded software and firmware development.</p>
+    <span class="now">Currently building: Portable Thermal Management System</span>
     <div class="links">
-      <a href="rohannargundkar10@gmail.com">GMAIL</a>
-      <a href="https://github.com/Rohannargundkar">GitHub</a>
-      <a href="https://www.linkedin.com/in/your-username">LinkedIn</a>
+      <a href="mailto:rohannargundkar10@gmail.com">Email</a>
+      <a href="https://github.com/Rohannargundkar" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="resume.pdf">Download resume</a>
     </div>
   </header>
@@ -64,37 +64,49 @@ footer{margin-top:5rem;color:var(--muted);font-size:.95rem}
     <h2>Projects</h2>
 
     <article class="project">
-      <h3><a href="https://github.com/your-username/vibration-logger">Vibration data logger with live dashboard</a></h3>
-      <p>ESP32 with an accelerometer samples vibration data and streams it over Wi-Fi to a Python dashboard that plots the signal live and shows frequency content (FFT). Logs are saved to CSV for later analysis.</p>
-      <div class="tags"><span>ESP32</span><span>C/C++</span><span>Python</span><span>FFT</span><span>Dashboard</span></div>
+      <h3><a href="https://github.com/Rohannargundkar/Industrial-Monitoring" target="_blank" rel="noopener noreferrer">Industrial IoT-Based Energy and Vibration Monitoring System</a></h3>
+      <p>Developed an ESP32-based condition-monitoring system using the ADXL345 accelerometer, INA219 current sensor, and DS3231 real-time clock. Implemented vibration sampling at 100 Hz and calculated RMS, peak, and dominant-frequency parameters. Connected ESP32 serial data to a local Python and Flask monitoring pipeline for data processing and display.</p>
+      <div class="tags"><span>ESP32</span><span>Embedded C</span><span>ADXL345</span><span>INA219</span><span>Python</span><span>Flask</span><span>Serial Communication</span></div>
     </article>
 
     <article class="project">
-      <h3><a href="https://github.com/your-username/power-logger">Power data logger</a></h3>
-      <p>ESP32 measures voltage and current, calculates power and energy use over time, and sends the readings to the same dashboard.</p>
-      <div class="tags"><span>ESP32</span><span>ADC / I2C sensors</span><span>Python</span><span>Data logging</span></div>
+      <h3><a href="https://github.com/Rohannargundkar/virtual-gpio-driver" target="_blank" rel="noopener noreferrer">Virtual GPIO Driver | Embedded C</a></h3>
+      <p>Developed a software-based GPIO peripheral model and driver in C. Implemented pin configuration, digital input/output operations, external input signals, interrupt handling, register simulation, and error handling. Created automated tests </p>
+      <div class="tags"><span>Embedded C</span><span>Device Drivers</span><span>GPIO</span><span>Register-Level Programming</span><span>Unit Testing</span><span>Make</span></div>
     </article>
 
     <article class="project">
-      <h3><a href="https://github.com/your-username/virtual-gpio">Register-level virtual GPIO driver and hardware simulator</a></h3>
-      <p>A GPIO peripheral modeled in C with memory-mapped registers, plus a driver on top of it. Simulates pin configuration, digital input and output, external input signals, interrupts, error conditions, and automated driver tests, all without a physical microcontroller.</p>
-      <div class="tags"><span>Embedded C</span><span>Device drivers</span><span>Register-level programming</span><span>Unit testing</span></div>
+      <h3>Portable Thermal Management System <span class="status">Ongoing</span></h3>
+      <p>Developing a modular C11-based embedded application for thermal monitoring and simulated fan control. The planned design includes simulated I2C temperature sensing, timer-based RPM measurement, PWM control, operating states, diagnostic events, and UART telemetry.</p>
+      <div class="tags"><span>C11</span><span>Embedded Systems</span><span>CMake</span><span>CTest</span><span>I2C</span><span>PWM</span><span>UART</span></div>
     </article>
   </section>
 
   <section id="skills">
-    <h2>Skills</h2>
+    <h2>Technical Skills</h2>
     <dl>
-      <dt>Languages</dt><dd>Embedded C, C++, Python, HTML, CSS</dd>
-      <dt>Hardware</dt><dd>ESP32, accelerometer and current sensors, I2C, ADC</dd>
-      <dt>Tools</dt><dd>Git, GitHub, VS Code, Wokwi, GCC, Make</dd>
+      <dt>Programming</dt><dd>C, Embedded C, Python</dd>
+      <dt>Embedded</dt><dd>GPIO, register-level programming, sensor interfacing, interrupt handling, PWM fundamentals</dd>
+      <dt>Communication</dt><dd>UART, I2C, serial communication</dd>
+      <dt>Platforms</dt><dd>ESP32, ATmega328P, Linux, WSL2</dd>
+      <dt>Tools</dt><dd>GCC, Make, Git, GitHub, VS Code</dd>
+      <dt>Other</dt><dd>Flask, data logging, basic signal analysis</dd>
     </dl>
   </section>
 
   <section id="education">
     <h2>Education</h2>
-    <p><strong>B.E in Electronics and Communication Engineering</strong>, Jain College of Engineering,Belagavi,</p> 
-    <p>2023 to 2027</p>
+    <p><strong>B.E. in Electronics and Communication Engineering</strong><br>
+    Jain College of Engineering, Belagavi</p>
+    <p>2023–2027 | CGPA: 7.92</p>
+  </section>
+
+  <section id="training">
+    <h2>Training &amp; Workshops</h2>
+    <article class="project">
+      <h3>Cadence EDA Workshop</h3>
+      <p>Exposure to Cadence Virtuoso, Innovus, and Genus tools, with an introduction to IC design and physical design workflows.</p>
+    </article>
   </section>
 
   <footer>© <span id="y"></span> Rohan Nargundkar</footer>
